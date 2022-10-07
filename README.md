@@ -1,11 +1,13 @@
 # bourdain_pizza
 
-## Prerequisites to run the API
+## Prerequisites
 
+- npm
+- node
 - docker
 - docker-compose
 
-To start server run the following commands:
+### How to run API
 
 1 - `cd server/src`
 
@@ -18,3 +20,14 @@ To start server run the following commands:
 5 - `npm run dev`
 
 And the server wil be running on port 3000
+
+
+### How to run APP
+
+1 - `cd client/src`
+
+2 - `npm i` 
+
+3 - `npm run start`
+
+enjoy
