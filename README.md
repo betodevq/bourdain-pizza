@@ -18,6 +18,8 @@
 
 3 - `docker-compose up -d`
 
+give it like 30 seconds to 1 minute for the database to init
+
 4 - `npm run migration:run`
 
 5 - `npm run dev`
