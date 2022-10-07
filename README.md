@@ -2,6 +2,16 @@
 
 ![image](https://user-images.githubusercontent.com/37468432/194673469-dc505ad5-2da0-421c-867c-d9ff29cb3d80.png)
 
+#### Stack:
+
+Backend:
+- Node with Express 
+- MySQL 
+- TypeORM
+
+Frontend:
+- React
+- MaterialUI
 
 ## Prerequisites
 
