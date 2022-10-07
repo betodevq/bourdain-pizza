@@ -4,7 +4,6 @@ import {
   Checkbox,
   FormHelperText,
   Grid,
-  IconButton,
   List,
   ListItem,
   ListItemButton,
@@ -13,7 +12,7 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { Typography, Backdrop } from "@mui/material";
+import { Typography } from "@mui/material";
 import { getPizzas } from "../../services/pizzas.service";
 import { Pizza } from "../../interfaces";
 
@@ -54,7 +53,7 @@ const Menu: React.FC<any> = ({ setSelectedItems }) => {
         <List
           sx={{
             width: "100%",
-            height: "75%",
+            height: "80%",
             overflow: "auto",
             bgcolor: "background.paper",
           }}
@@ -83,7 +82,9 @@ const Menu: React.FC<any> = ({ setSelectedItems }) => {
                           inputProps={{ "aria-label": "Without label" }}
                         >
                           {[...Array(10)].map((n, i) => (
-                            <MenuItem value={i + 1}>{i + 1}</MenuItem>
+                            <MenuItem key={i + 1} value={i + 1}>
+                              {i + 1}
+                            </MenuItem>
                           ))}
                         </Select>
                       </>
@@ -111,17 +112,30 @@ const Menu: React.FC<any> = ({ setSelectedItems }) => {
                   <ListItemText
                     id={labelId}
                     primary={
-                      <Typography sx={{ fontWeight: "bold" }} fontSize={16}>
+                      <Typography
+                        component={"div"}
+                        sx={{ fontWeight: "bold" }}
+                        fontSize={16}
+                      >
                         {pizza.name}
                       </Typography>
                     }
+                    disableTypography
                     secondary={
-                      <div style={{width: "90%"}}>
-                        {pizza.ingredients.join(", ")}.
-                        <Typography fontSize={14} color={"black"}>
+                      <>
+                        <Typography
+                          sx={{ color: "rgba(0, 0, 0, 0.6)", fontSize: 14 }}
+                        >
+                          {pizza.ingredients.join(", ")}.
+                        </Typography>
+                        <Typography
+                          component={"div"}
+                          fontSize={14}
+                          color={"black"}
+                        >
                           {`$ ${pizza.price}`}
                         </Typography>
-                      </div>
+                      </>
                     }
                   />
                 </ListItemButton>

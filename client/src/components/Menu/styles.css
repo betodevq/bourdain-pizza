@@ -1,12 +1,11 @@
 .menu {
-  /* margin: 0 auto; */
   height: 100%;
   width: 100%;
   background-color: #fff;
   padding: 20px;
 }
 
-.menu-quantity-input{
+.menu-quantity-input {
   display: flex;
   justify-content: flex-end;
 }

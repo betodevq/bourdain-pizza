@@ -11,27 +11,28 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { Typography, Backdrop } from "@mui/material";
-import CircularProgress from "@mui/material/CircularProgress";
+import { Typography } from "@mui/material";
 import { Order, Pizza } from "../../interfaces";
 import { createOrder } from "../../services/orders.service";
+import { calculateTotalPrice } from "../../utils";
 
-const Summary: React.FC<any> = ({ items }) => {
-  const calculateTotalPrice = (items: Pizza[]) => {
-    return items.reduce((total, item) => {
-      if (item.quantity) {
-        return total + item.price * item.quantity;
-      }
-      return total;
-    }, 0);
-  };
+type Props = {
+  items: any;
+  setFinishOrder: (option: boolean) => void;
+  setOrder: (order: Order) => void;
+};
 
+const Summary: React.FC<Props> = ({ items, setFinishOrder, setOrder }) => {
   const placeOrder = async (items: any[]) => {
     const orderRequestBody: Order = {
       items: items.map((i) => ({ pizza: { id: i.id }, quantity: i.quantity })),
     };
-    let order = await createOrder(orderRequestBody);
-    console.log("placeOrder", order);
+    let order: Order | undefined = await createOrder(orderRequestBody);
+
+    if (order) {
+      setOrder(order);
+      setFinishOrder(true);
+    }
   };
   return (
     <>
@@ -55,7 +56,7 @@ const Summary: React.FC<any> = ({ items }) => {
               {items &&
                 items?.map((item: Pizza) => (
                   <TableRow
-                    key={item.name}
+                    key={item.id}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <TableCell component="th" scope="row">
