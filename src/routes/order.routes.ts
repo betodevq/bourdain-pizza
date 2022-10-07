@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { createOrder, getOrderDetail, getOrders } from "../controllers/order.controllers";
-import { getPizzas } from "../controllers/pizza.controllers";
 
 const router = Router();
 
