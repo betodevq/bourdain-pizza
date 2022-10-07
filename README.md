@@ -12,7 +12,7 @@
 
 ### How to run API
 
-1 - `cd server/src`
+1 - `cd server`
 
 2 - `npm i`
 
@@ -27,7 +27,7 @@ And the server wil be running on port 3000
 
 ### How to run APP
 
-1 - `cd client/src`
+1 - `cd client`
 
 2 - `npm i` 
 
