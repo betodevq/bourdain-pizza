@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/37468432/194673469-dc505ad5-2da0-421c-867c-d9ff29cb3d80.png)
 
-#### Stack:
+## Stack:
 
 Backend:
 - Node with Express 
@@ -20,7 +20,7 @@ Frontend:
 - docker
 - docker-compose
 
-### How to run API
+## How to run API
 
 1 - `cd server`
 
@@ -37,7 +37,7 @@ give it like 30 seconds to 1 minute for the database to init
 And the server wil be running on port 3000
 
 
-### How to run APP
+## How to run APP
 
 1 - `cd client`
 
