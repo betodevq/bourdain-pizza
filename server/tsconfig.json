@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+      "lib": ["es5", "es6", "dom"],
+      "target": "es6",
+      "module": "commonjs",
+      "moduleResolution": "node",    
+      "rootDir": "./src",                                  /* Specify the root folder within your source files. */
+      "outDir": "./build",                                   /* Specify an output folder for all emitted files. */
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+      "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+  
+  }
+}

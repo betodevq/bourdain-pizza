@@ -1,0 +1,44 @@
+{
+  "name": "bourdain-pizza",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc",
+    "migration:generate": "sh -c 'npm run typeorm -- migration:generate ./src/migrations/$0'",
+    "start": "node build/index.js",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli -d ./src/database.config.ts",
+    "migration:create": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli migration:create ./src/migrations/$npm_config_name",
+    "migration:run": "npm run build && npm run typeorm -- migration:run",
+    "migration:revert": "npm run typeorm -- migration:revert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betodevq/bourdain-pizza.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/betodevq/bourdain-pizza/issues"
+  },
+  "homepage": "https://github.com/betodevq/bourdain-pizza#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.8.2",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.14",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.10"
+  }
+}
