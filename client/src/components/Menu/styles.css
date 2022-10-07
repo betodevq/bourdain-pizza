@@ -1,0 +1,12 @@
+.menu {
+  /* margin: 0 auto; */
+  height: 70%;
+  width: 45%;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.menu-quantity-input{
+  display: flex;
+  justify-content: flex-end;
+}
