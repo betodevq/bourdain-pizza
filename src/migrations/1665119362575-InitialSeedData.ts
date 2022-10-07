@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class InitialSeedData1665113440635 implements MigrationInterface {
-  name = "InitialSeedData1665113440635";
+export class InitialSeedData1665119362575 implements MigrationInterface {
+  name = "InitialSeedData1665119362575";
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(`INSERT INTO pizza

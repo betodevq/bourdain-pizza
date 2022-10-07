@@ -18,7 +18,7 @@ export class Item extends BaseEntity {
   @ManyToOne(() => Order, (order) => order.items)
   order: Order;
 
-  @OneToOne(() => Pizza, { nullable: false })
+  @ManyToOne(() => Pizza, { nullable: false })
   @JoinColumn()
   pizza: Pizza;
 
