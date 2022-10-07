@@ -6,7 +6,10 @@ export const AppDataSource = new DataSource({
     port: 3306,
     username: "bourdain",
     password: "root",
+    synchronize: false,
     database: "bourdain-core",
-    entities: ["src/Entity/*.ts"],
+    entities: ["src/entities/*.entity.ts"],
+    migrations: ["src/migrations/*.ts"],
+    migrationsTableName: "migrations",
     logging: true,
 });

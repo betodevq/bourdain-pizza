@@ -4,9 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/app.ts",
+    "dev": "nodemon ./src/index.ts",
     "build": "tsc",
-    "start": "node build/index.js"
+    "migration:generate": "sh -c 'npm run typeorm -- migration:generate ./src/migrations/$0'",
+    "start": "node build/index.js",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli -d ./src/database.config.ts",
+    "migration:create": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli migration:create ./src/migrations/$npm_config_name",
+    "migration:run": "npm run build && npm run typeorm -- migration:run",
+    "migration:revert": "npm run typeorm -- migration:revert"
   },
   "repository": {
     "type": "git",
@@ -22,7 +27,9 @@
     "@types/cors": "^2.8.12",
     "@types/morgan": "^1.9.3",
     "@types/node": "^18.8.2",
-    "ts-node-dev": "^2.0.0",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
