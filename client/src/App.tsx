@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Menu from "./components/Menu";
@@ -10,10 +11,10 @@ function App() {
   }, [selectedItems]);
   return (
     <div className="Dashboard">
-      <div className="container">
+      <Grid container sx={{width: "90%"}} className="container">
         <Menu setSelectedItems={setSelectedItems} />
         <Summary items={selectedItems} />
-      </div>
+      </Grid>
     </div>
   );
 }

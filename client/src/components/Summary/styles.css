@@ -1,10 +1,17 @@
 .summary {
   background-color: #fff;
-  height: 70%;
-  width: 50%;
+  height: 100%;
+  width: 100%;
   padding: 20px;
 }
 
 .summary-title {
   margin-bottom: 10px;
+}
+
+.summary-checkout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
 }

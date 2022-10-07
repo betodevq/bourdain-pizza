@@ -14,7 +14,6 @@ import {
   Select,
 } from "@mui/material";
 import { Typography, Backdrop } from "@mui/material";
-import CircularProgress from "@mui/material/CircularProgress";
 import { getPizzas } from "../../services/pizzas.service";
 import { Pizza } from "../../interfaces";
 
@@ -22,7 +21,7 @@ const Menu: React.FC<any> = ({ setSelectedItems }) => {
   const [pizzas, setPizzas] = useState<Pizza[] | []>([]);
 
   const fetchPizzas = async () => {
-    let pizzasRequest: Pizza[] = await getPizzas();
+    let pizzasRequest = await getPizzas();
     if (pizzasRequest) setPizzas(pizzasRequest);
   };
 
@@ -48,14 +47,14 @@ const Menu: React.FC<any> = ({ setSelectedItems }) => {
 
   return (
     <>
-      <Grid className="menu">
+      <Grid xs item className="menu">
         <Typography variant="h4" component="div" sx={{ marginBottom: 2 }}>
           Pizzas Menu
         </Typography>
         <List
           sx={{
             width: "100%",
-            height: "85%",
+            height: "75%",
             overflow: "auto",
             bgcolor: "background.paper",
           }}
@@ -111,14 +110,18 @@ const Menu: React.FC<any> = ({ setSelectedItems }) => {
                   </ListItemIcon>
                   <ListItemText
                     id={labelId}
-                    primary={`${pizza.name}`}
+                    primary={
+                      <Typography sx={{ fontWeight: "bold" }} fontSize={16}>
+                        {pizza.name}
+                      </Typography>
+                    }
                     secondary={
-                      <>
+                      <div style={{width: "90%"}}>
                         {pizza.ingredients.join(", ")}.
-                        <Typography color={"black"}>
-                          {`$${pizza.price}`}
+                        <Typography fontSize={14} color={"black"}>
+                          {`$ ${pizza.price}`}
                         </Typography>
-                      </>
+                      </div>
                     }
                   />
                 </ListItemButton>

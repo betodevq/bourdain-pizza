@@ -6,3 +6,12 @@ export interface Pizza {
   selected?: boolean;
   quantity?: number;
 }
+
+export interface Order {
+  items: Item[];
+}
+
+export interface Item {
+  pizza: { id: number };
+  quantity: number;
+}
